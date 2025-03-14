@@ -107,6 +107,23 @@ public class Lista {
 	public double averageLengthRicorsivo() {
 		return (double) averageLengthRicorsivo(head)/countElement();
 	}
+
+	private double averageLengthRicorsivoI(Elemento elementScan, double somma, int count) {
+		if(elementScan == null) {
+			return somma/count;
+		}
+		
+		if(elementScan.stringa.length() % 2 == 0) {
+			somma += elementScan.stringa.length();
+			count++;
+		}
+		
+		return averageLengthRicorsivoI(elementScan.next, somma, count);
+	}
+
+	public double averageLengthRicorsivoI() {
+		return averageLengthRicorsivoI(head, 0, 0);
+	}
 	
 	public boolean equalsString(String s) {
 		boolean equals = false;
