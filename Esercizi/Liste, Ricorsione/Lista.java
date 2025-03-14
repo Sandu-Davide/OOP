@@ -113,7 +113,7 @@ public class Lista {
 			return somma/count;
 		}
 		
-		if(elementScan.stringa.length() % 2 == 0) {
+		if((elementScan.stringa.length() & 1) == 0) {
 			somma += elementScan.stringa.length();
 			count++;
 		}
